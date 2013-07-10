@@ -7,7 +7,8 @@ app.get('/', function(request, response) {
    fs.readFileSync('index.html', function (error, data) {
      if(err) throw err;
      console.log(data);
-     var rsp = Buffer.toString(data);
+     var buffer = new Buffer();
+     var rsp = buffer.toString(data);
      response.send(rsp);
    });
    //response.send('Hello World 2!');
