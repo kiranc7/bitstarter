@@ -8,7 +8,8 @@ app.get('/', function(request, response) {
      if(err) throw err;
      console.log(data);
      var buffer = new Buffer();
-     var rsp = buffer.toString(data);
+     buffer.write(data, "utf-8");
+     var rsp = buffer.toString('utf-8');
      response.send(rsp);
    });
    //response.send('Hello World 2!');
